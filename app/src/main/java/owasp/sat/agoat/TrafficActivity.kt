@@ -12,7 +12,7 @@ import kotlinx.coroutines.launch
 import okhttp3.*
 import java.io.IOException
 class TrafficActivity : AppCompatActivity() {
-    var httpurl= "http://demo.testfire.net"
+    var httpurl= "https://demo.testfire.net"
     var httpsurl= "https://owasp.org"
     var httpsurl1= "https://cve.org"
     private val client = OkHttpClient()
