@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<manifest xmlns:android="http://schemas.android.com/apk/res/android">
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
 
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
@@ -11,7 +12,8 @@
         android:required="false"/>
 
     <application
-        android:allowBackup="true"
+        android:allowBackup="false"
+        tools:replace="android:allowBackup"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:networkSecurityConfig="@xml/network_security_config"
@@ -32,7 +34,9 @@
             android:exported="false" />
         <activity
             android:name=".SplashActivity"
-            android:exported="true">
+            android:exported="true"
+            android:taskAffinity=""
+            android:launchMode="singleTask">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -65,7 +69,9 @@
             android:label="@string/activity" />
         <activity
             android:name=".AccessControl1ViewActivity"
-            android:exported="true"
+            android:exported="false"
+            android:taskAffinity=""
+            android:launchMode="singleTask"
             android:label="@string/activity">
             <intent-filter>
                 <action android:name="android.intent.action.VIEW" />
@@ -81,7 +87,7 @@
         <receiver
             android:name=".ShowDataReceiver"
             android:enabled="true"
-            android:exported="true" />
+            android:exported="false" />
 
         <activity
             android:name=".HardCodeActivity"
@@ -113,7 +119,7 @@
         <service
             android:name=".DownloadInvoiceService"
             android:enabled="true"
-            android:exported="true" />
+            android:exported="false" />
 
         <activity
             android:name=".BinaryPatchingActivity"
@@ -140,7 +146,7 @@
         <provider
             android:name=".ContentProviderActivity"
             android:authorities="owasp.sat.agoat.provider.userpinsprovider"
-            android:exported="true"/>
+            android:exported="false"/>
     </application>
 
 </manifest>
