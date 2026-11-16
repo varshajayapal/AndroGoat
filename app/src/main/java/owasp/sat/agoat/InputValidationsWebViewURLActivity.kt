@@ -20,8 +20,8 @@ class InputValidationsWebViewURLActivity : AppCompatActivity() {
             webViewSettings.javaScriptEnabled=true;
             webViewSettings.allowFileAccess=true;
             webViewSettings.allowContentAccess = true
-            webViewSettings.allowFileAccessFromFileURLs = true
-            webViewSettings.allowUniversalAccessFromFileURLs = true
+            webViewSettings.allowFileAccessFromFileURLs = false
+            webViewSettings.allowUniversalAccessFromFileURLs = false
             val url = urlEditText.text.toString()
             webView.loadUrl(url)
         }

@@ -13,6 +13,7 @@ class InputValidationsOSCMDInjectionMain2Activity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_input_validations_oscmdinjection_main2)
+        window.decorView.rootView.filterTouchesWhenObscured = true
         val runButton = findViewById<Button>(R.id.run)
         val result = findViewById<TextView>(R.id.result)
         val ip = findViewById<EditText>(R.id.ip)

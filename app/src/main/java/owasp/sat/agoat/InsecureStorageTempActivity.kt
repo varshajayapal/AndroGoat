@@ -15,6 +15,7 @@ class InsecureStorageTempActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_insecure_storage_temp)
+        window.decorView.rootView.filterTouchesWhenObscured = true
         val savebutton =findViewById<Button>(R.id.TempViewButton);
         val username =findViewById<EditText>(R.id.userName);
         val password= findViewById<EditText>(R.id.password);
