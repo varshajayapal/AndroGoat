@@ -21,10 +21,10 @@ class SQLinjectionActivity : AppCompatActivity() {
         val builder = androidx.appcompat.app.AlertDialog.Builder(this)
         builder.setTitle("Search Users")
         sqliButton.setOnClickListener{
-            val qry = "SELECT * FROM users WHERE username='"+username.text+"'";
+            val qry = "SELECT * FROM users WHERE username = ?";
             try {
                 mDB = openOrCreateDatabase("aGoat", 0, null)
-                val qryResult = mDB?.rawQuery(qry, null)
+                val qryResult = mDB?.rawQuery(qry, arrayOf(username.text.toString()))
                 val strb = StringBuilder("")
                 if (qryResult == null || qryResult.count <= 0) {
                     strb.append("User: (${username.text}) not found")
@@ -37,7 +37,6 @@ class SQLinjectionActivity : AppCompatActivity() {
                 }
                 builder.setMessage("Users Found:\n ${strb.toString()}")
                 Toast.makeText(this, strb.toString(), Toast.LENGTH_LONG).show()
-                Log.e("QueryResult",strb.toString())
             } catch (e: Exception) {
                 Log.d("Error", "Error occurred when querying database: ${e.message}")
                 builder.setMessage("Error occurred:\n ${e.message}")

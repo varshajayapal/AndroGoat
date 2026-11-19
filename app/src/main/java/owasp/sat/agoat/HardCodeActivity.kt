@@ -15,6 +15,7 @@ class HardCodeActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_hard_code)
+        window.decorView.rootView.setFilterTouchesWhenObscured(true)
         val verifyButton = findViewById<Button>(R.id.hardcode1)
         val priceValue = findViewById<TextView>(R.id.price)
         val promoCodeValue = findViewById<EditText>(R.id.promocode)
